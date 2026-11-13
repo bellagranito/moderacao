@@ -1,0 +1,135 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  background: #f1f3f8;
+  color: #1f2937;
+}
+
+.topo {
+  background: #1e2a4a;
+  color: #fff;
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.topo h1 { margin: 0; font-size: 20px; }
+.login { display: flex; align-items: center; gap: 8px; }
+.login select { padding: 6px; border-radius: 6px; border: none; }
+
+.selo {
+  background: #3b82f6;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.abas { background: #fff; padding: 0 28px; border-bottom: 1px solid #d9dde7; }
+.aba {
+  background: none;
+  border: none;
+  padding: 14px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  color: #4b5563;
+}
+.aba.ativa { color: #1e2a4a; border-bottom-color: #3b82f6; font-weight: 600; }
+
+main { max-width: 1100px; margin: 24px auto; padding: 0 20px; }
+h2 { margin: 0 0 14px; font-size: 18px; }
+.escondido { display: none !important; }
+
+.aviso { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
+.aviso.erro { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.aviso.sucesso { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+
+.cartao {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.cartao p { margin: 4px 0 0; }
+.cartao small { color: #6b7280; }
+.cartao.removida { opacity: 0.55; }
+
+.barra { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.barra select { padding: 7px; border-radius: 6px; border: 1px solid #cbd2e0; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
+th, td { padding: 10px 12px; text-align: left; font-size: 14px; border-bottom: 1px solid #eceff5; vertical-align: top; }
+th { background: #e8ecf5; font-size: 12px; text-transform: uppercase; color: #4b5563; }
+td.trecho { max-width: 260px; }
+
+.btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn:hover { background: #1d4ed8; }
+.btn.secundario { background: #e5e7eb; color: #1f2937; }
+.btn.perigo { background: #dc2626; }
+.btn.perigo:hover { background: #b91c1c; }
+.btn.pequeno { padding: 5px 10px; font-size: 13px; }
+
+.tag { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+.estado-RECEBIDA { background: #dbeafe; color: #1e40af; }
+.estado-EM_ANALISE { background: #fef3c7; color: #92400e; }
+.estado-ESCALONADA { background: #fce7f3; color: #9d174d; }
+.estado-PROCEDENTE { background: #fee2e2; color: #991b1b; }
+.estado-IMPROCEDENTE { background: #dcfce7; color: #166534; }
+.estado-REVERTIDA { background: #e5e7eb; color: #374151; }
+.faixa-ALTA { background: #fee2e2; color: #991b1b; }
+.faixa-MEDIA { background: #fef3c7; color: #92400e; }
+.faixa-BAIXA { background: #dcfce7; color: #166534; }
+.vencido { color: #b91c1c; font-weight: 600; }
+
+.fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 30px 12px;
+}
+.janela {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 720px;
+  position: relative;
+}
+.janela h3 { margin: 18px 0 8px; font-size: 15px; }
+.janela h3:first-child { margin-top: 0; }
+.fechar { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 26px; cursor: pointer; color: #6b7280; }
+
+.citacao { background: #f3f4f6; border-left: 4px solid #3b82f6; padding: 10px 14px; border-radius: 4px; margin: 8px 0; }
+.lista { margin: 0; padding-left: 18px; font-size: 14px; }
+.lista li { margin-bottom: 5px; }
+.acoes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+
+label.campo { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 4px; }
+select.campo, textarea.campo { width: 100%; padding: 8px; border: 1px solid #cbd2e0; border-radius: 6px; font-family: inherit; font-size: 14px; }
+textarea.campo { min-height: 70px; resize: vertical; }
+.vazio { color: #6b7280; padding: 20px; text-align: center; }
+
+#aviso { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 20; max-width: 90%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+#form-acao { margin-top: 10px; }

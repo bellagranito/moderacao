@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moderação de Conteúdo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Moderação de Conteúdo</h1>
+    <div class="login">
+      <label for="usuario">Entrar como</label>
+      <select id="usuario"></select>
+      <span id="perfil" class="selo"></span>
+    </div>
+  </header>
+
+  <nav class="abas">
+    <button id="aba-denunciar" class="aba ativa">Denunciar</button>
+    <button id="aba-fila" class="aba">Fila de casos</button>
+  </nav>
+
+  <main>
+    <div id="aviso" class="aviso escondido"></div>
+
+    <section id="painel-denunciar">
+      <h2>Postagens</h2>
+      <div id="postagens"></div>
+    </section>
+
+    <section id="painel-fila" class="escondido">
+      <div class="barra">
+        <h2>Fila de casos</h2>
+        <div>
+          <select id="filtro-estado">
+            <option value="">Todos os estados</option>
+            <option value="RECEBIDA">RECEBIDA</option>
+            <option value="EM_ANALISE">EM_ANALISE</option>
+            <option value="ESCALONADA">ESCALONADA</option>
+            <option value="PROCEDENTE">PROCEDENTE</option>
+            <option value="IMPROCEDENTE">IMPROCEDENTE</option>
+            <option value="REVERTIDA">REVERTIDA</option>
+          </select>
+          <button id="btn-sla" class="btn secundario escondido">Verificar SLA agora</button>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Caso</th><th>Postagem</th><th>Denúncias</th><th>Urgência</th><th>Prazo (SLA)</th><th>Estado</th><th>Moderador</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="casos"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="modal" class="fundo escondido">
+    <div class="janela">
+      <button id="fechar" class="fechar">&times;</button>
+      <div id="conteudo-modal"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
