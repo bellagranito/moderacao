@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16
+    container_name: moderacao-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: moderacao
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./src/infrastructure/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./src/infrastructure/seed.sql:/docker-entrypoint-initdb.d/2-seed.sql
+      - dados:/var/lib/postgresql/data
+
+volumes:
+  dados:
