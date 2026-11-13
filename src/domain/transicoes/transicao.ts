@@ -26,6 +26,7 @@ export abstract class Transicao {
 
   abstract aplicar(ctx: ContextoTransicao, portas: PortasTransicao): Promise<AlteracaoCaso>;
 
+  // contrato: lança ErroDominio se alguma condição não for atendida (nunca devolve false)
   async validar(_ctx: ContextoTransicao, _portas: PortasTransicao): Promise<void> {}
 
   permitePara(estado: Estado, perfil: Perfil): boolean {
